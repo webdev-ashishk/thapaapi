@@ -1,5 +1,5 @@
 import "dotenv/config";
-import ProductModel from "../models/product";
+import ProductModel from "../models/product.js";
 import connectDB from "./connect";
 import ProductJSON from "./product.json";
 console.log(ProductJSON);
