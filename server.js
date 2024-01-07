@@ -1,14 +1,15 @@
-const express = require("express");
+import express from "express";
+import connectDB from "./db/connect.js";
+import products from "./routes/products.js";
 const app = express();
 const port = 3000;
-const product_routes = require("./routes/products");
 app.get("/", (req, res) => {
   res.send("Hello World!");
-  console.log(req);
 });
 
-app.use("/api/products", product_routes);
+app.use("/api/products", products);
 
-app.listen(port, () => {
+app.listen(port, async () => {
+  await connectDB();
   console.log(`server is running ${port}`);
 });
