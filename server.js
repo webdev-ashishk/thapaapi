@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import connectDB from "./db/connect.js";
 import products from "./routes/products.js";
@@ -10,6 +11,6 @@ app.get("/", (req, res) => {
 app.use("/api/products", products);
 
 app.listen(port, async () => {
-  await connectDB();
+  await connectDB(process.env.MONGODB_URL);
   console.log(`server is running ${port}`);
 });

@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
-const uri =
-  "mongodb+srv://webdevashishk:koXDxEaQQ0ffldKl@thapaapi.q0n7uyj.mongodb.net/ThapaAPI?retryWrites=true&w=majority";
-const connectDB = () => {
+
+const connectDB = (URL) => {
   console.log("connectDB is running!");
-  return mongoose.connect(uri, {
+  return mongoose.connect(URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
